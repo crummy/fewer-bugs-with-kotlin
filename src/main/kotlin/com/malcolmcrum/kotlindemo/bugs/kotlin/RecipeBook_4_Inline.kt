@@ -4,7 +4,7 @@ class RecipeBook_4_Inline {
     private val recipes = mutableMapOf<Recipe.Id, Recipe>()
 
     fun getRecipes(): Collection<Recipe> {
-        return recipes.values;
+        return recipes.values
     }
 
     fun getRecipe(recipeId: Recipe.Id): Recipe? {

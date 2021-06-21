@@ -21,7 +21,7 @@ internal class RecipeBookTest {
         val recipe = Recipe(Recipe.Id(1), "Jelly", listOf(ingredient), "method")
         recipeBook.addRecipe(recipe)
         // Kotlin won't let us get our IDs in the wrong order thanks to value classes.
-        recipeBook.updateIngredient(recipe.id, ingredient.id, 4, "cups", "Jelly mixture")
+//        recipeBook.updateIngredient(ingredient.id, recipe.id, 4, "cups", "Jelly mixture")
 
         val sweet = Sweet(true)
         val sour = Sour(false)
