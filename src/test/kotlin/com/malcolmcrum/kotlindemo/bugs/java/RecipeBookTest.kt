@@ -34,7 +34,12 @@ internal class RecipeBookTest {
         recipeBook.addRecipe(recipe)
         // hmm...
         recipeBook.updateIngredientAmount(ingredient.id, recipe.id, 4, "cups", "Jelly powder")
+        val isSweet = true
+        val isSalty = false
+        val isSour = false
+        val isBitter = false
+        val isUmami = true
         // oh no
-        recipeBook.setFlavours(recipe.id, true, false, false, false, true)
+        recipeBook.setFlavours(recipe.id, isSweet, isSalty, isSour, isBitter, isUmami)
     }
 }
