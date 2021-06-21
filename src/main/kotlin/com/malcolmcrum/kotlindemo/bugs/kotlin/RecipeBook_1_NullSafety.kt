@@ -23,12 +23,19 @@ class RecipeBook_1_NullSafety {
 //        recipes[recipeId] = updated
 //    }
 
-//    fun getAverageRating(): Float {
+//    fun getAverageRating(): Double {
 //        var total = 0
 //        for (recipe in recipes.values) {
 //            total += recipe.rating
 //        }
-//        return total.toFloat() / recipes.size
+//        return total.toDouble() / recipes.size
+//    }
+
+//    fun getActualAverageRating(): Double {
+//        return recipes.values
+//            .map { it.rating }
+//            .filterNotNull()
+//            .average()
 //    }
 
     data class Recipe(
