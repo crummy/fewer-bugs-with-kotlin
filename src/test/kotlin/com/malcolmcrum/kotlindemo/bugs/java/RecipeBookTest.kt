@@ -6,12 +6,12 @@ internal class RecipeBookTest {
     @Test
     fun `null pointer exception when summing ints`() {
         val recipeBook = RecipeBook_1()
-        val recipe1 = Recipe(1, "Chicken Parma", listOf(), "method", null)
-        val recipe2 = Recipe(2, "Quesedillas", listOf(), "method", 5)
-        val recipe3 = Recipe(3, "Feijoa Icecream", listOf(), "method", 4)
-        recipeBook.addRecipe(recipe1)
-        recipeBook.addRecipe(recipe2)
-        recipeBook.addRecipe(recipe3)
+        val bananaBread = Recipe(1, "Banana Bread", listOf(), "method", null)
+        val tapiocaPudding = Recipe(2, "Chocolate Hazelnut Tapioca Pudding", listOf(), "method", 5)
+        val feijoaIceCream = Recipe(3, "Feijoa Ice Cream", listOf(), "method", 4)
+        recipeBook.addRecipe(bananaBread)
+        recipeBook.addRecipe(tapiocaPudding)
+        recipeBook.addRecipe(feijoaIceCream)
         val average = recipeBook.averageRating
         println("average: $average")
     }
@@ -19,27 +19,32 @@ internal class RecipeBookTest {
     @Test
     fun `modifying mutable collection`() {
         val recipeBook = RecipeBook_3()
-        val recipe = Recipe(1, "Recipe", listOf(), "method", 3)
-        recipeBook.addRecipe(recipe)
+        val custard = Recipe(1, "Custard", listOf(), "Whisk the eggs...", 3)
+        recipeBook.addRecipe(custard)
+
         val myFavouriteRecipes = recipeBook.getRecipes()
         myFavouriteRecipes.removeIf { it.rating == null || it.rating < 4 }
-        assert(recipeBook.getRecipes().size == 1)
+
+        if (!recipeBook.getRecipes().contains(custard)) {
+            throw Error("Where is the custard recipe??")
+        }
     }
 
     @Test
     fun `ambiguous method parameters`() {
         val recipeBook = RecipeBook_4()
-        val ingredient = Ingredient(2, 3, "cups", "Jelly powder")
-        val recipe = Recipe(1, "Recipe", listOf(), "method", 3)
-        recipeBook.addRecipe(recipe)
+        val sourCream = Ingredient(2, 1250, "ml", "Sour Cream")
+        val bananaBread = Recipe(1, "Banana Bread", listOf(), "method", 3)
+        recipeBook.addRecipe(bananaBread)
         // hmm...
-        recipeBook.updateIngredientAmount(ingredient.id, recipe.id, 4, "cups", "Jelly powder")
+        recipeBook.updateIngredientAmount(sourCream.id, bananaBread.id, 125, "ml", "Sour Cream")
+
         val isSweet = true
         val isSalty = false
         val isSour = false
         val isBitter = false
         val isUmami = true
         // oh no
-        recipeBook.setFlavours(recipe.id, isSweet, isSalty, isSour, isBitter, isUmami)
+        recipeBook.setFlavours(bananaBread.id, isSalty, isSweet, isSour, isBitter, isUmami)
     }
 }
