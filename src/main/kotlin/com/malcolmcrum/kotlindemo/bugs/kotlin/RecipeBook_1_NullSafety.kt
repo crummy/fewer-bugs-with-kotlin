@@ -17,9 +17,15 @@ class RecipeBook_1_NullSafety {
         recipes[recipe.id] = recipe
     }
 
-//    fun updateRecipeTitle(recipeId: Int, title: String) {
+//    fun updateRecipeRating(recipeId: Int, rating: Int?) {
 //        val recipe = recipes[recipeId]
-//        val updated = recipe.copy(title = title)
+//        val updated = Recipe(
+//            recipe.id,
+//            recipe.title,
+//            recipe.ingredients,
+//            recipe.method,
+//            rating
+//        )
 //        recipes[recipeId] = updated
 //    }
 
