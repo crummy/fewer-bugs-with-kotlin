@@ -1,7 +1,7 @@
 package com.malcolmcrum.kotlindemo.bugs.kotlin
 
 @Suppress("unused")
-class RecipeBook_4_Inline {
+class RecipeBook_4_Value {
     private val recipes = mutableMapOf<Recipe.Id, Recipe>()
 
     fun getRecipes(): Collection<Recipe> {

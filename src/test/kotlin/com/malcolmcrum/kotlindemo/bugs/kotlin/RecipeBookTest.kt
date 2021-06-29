@@ -1,6 +1,6 @@
 package com.malcolmcrum.kotlindemo.bugs.kotlin
 
-import com.malcolmcrum.kotlindemo.bugs.kotlin.RecipeBook_4_Inline.*
+import com.malcolmcrum.kotlindemo.bugs.kotlin.RecipeBook_4_Value.*
 import org.junit.jupiter.api.Test
 
 internal class RecipeBookTest {
@@ -20,7 +20,7 @@ internal class RecipeBookTest {
 
     @Test
     fun `ambiguous method parameters`() {
-        val recipeBook = RecipeBook_4_Inline()
+        val recipeBook = RecipeBook_4_Value()
         val sourCream = Ingredient(Ingredient.Id(1), 1000, "ml", "Sour cream")
         val bananaBread = Recipe(Recipe.Id(1), "Banana Bread", listOf(sourCream), "Add the sour cream!")
         recipeBook.addRecipe(bananaBread)
@@ -32,6 +32,6 @@ internal class RecipeBookTest {
         val salty = Salty(false)
         val bitter = Bitter(false)
         val umami = Umami(true)
-//        recipeBook.setFlavours(sourCream.id, salty, sweet, sour, bitter, umami)
+//        recipeBook.setFlavours(bananaBread.id, salty, sweet, sour, bitter, umami)
     }
 }
