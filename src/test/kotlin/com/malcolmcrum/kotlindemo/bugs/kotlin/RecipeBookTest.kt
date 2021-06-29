@@ -21,11 +21,11 @@ internal class RecipeBookTest {
     @Test
     fun `ambiguous method parameters`() {
         val recipeBook = RecipeBook_4_Inline()
-        val sourCream = Ingredient(Ingredient.Id(1), 125, "ml", "Sour Cream")
+        val sourCream = Ingredient(Ingredient.Id(1), 1000, "ml", "Sour cream")
         val bananaBread = Recipe(Recipe.Id(1), "Banana Bread", listOf(sourCream), "Add the sour cream!")
         recipeBook.addRecipe(bananaBread)
         // Kotlin won't let us get our IDs in the wrong order thanks to value classes.
-//        recipeBook.updateIngredient(sourCream.id, bananaBread.id, 4, "cups", "Jelly mixture")
+//        recipeBook.updateIngredient(sourCream.id, bananaBread.id, 100, "ml", "Sour cream")
 
         val sweet = Sweet(true)
         val sour = Sour(false)

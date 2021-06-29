@@ -33,11 +33,11 @@ internal class RecipeBookTest {
     @Test
     fun `ambiguous method parameters`() {
         val recipeBook = RecipeBook_4()
-        val sourCream = Ingredient(2, 1250, "ml", "Sour Cream")
-        val bananaBread = Recipe(1, "Banana Bread", listOf(), "method", 3)
+        val sourCream = Ingredient(2, 1000, "ml", "Sour cream")
+        val bananaBread = Recipe(1, "Banana Bread", listOf(sourCream), "Add the sour cream!", 3)
         recipeBook.addRecipe(bananaBread)
         // hmm...
-        recipeBook.updateIngredientAmount(sourCream.id, bananaBread.id, 125, "ml", "Sour Cream")
+        recipeBook.updateIngredientAmount(sourCream.id, bananaBread.id, 100, "ml", "Sour cream")
 
         val isSweet = true
         val isSalty = false
